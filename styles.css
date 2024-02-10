@@ -4,8 +4,6 @@
     justify-content:space-between;
 }
 
-
-
 .form{
     display:flex;
     flex-direction: column;
@@ -17,7 +15,7 @@
     border-radius: 10px;
 }
 
-.tablero3 {
+.table {
     background-color: rgb(255, 255, 255);
     display: grid;
     grid-template-columns: repeat(3, 50px);
@@ -26,25 +24,13 @@
     margin: 10px;
 }
 
-.tablero4 {
-    background-color: rgb(255, 255, 255);
-    display: grid;
-    grid-template-columns: repeat(4, 50px);
-    grid-template-rows:repeat(4, 50px);
-    gap: 4px;
-    margin: 10px;
-}
 
-.tablero5 {
-    background-color: rgb(255, 255, 255);
-    display: grid;
-    grid-template-columns: repeat(5, 50px);
-    grid-template-rows:repeat(5, 50px);
-    gap: 4px;
-    margin: 10px;
-}
-
-.item{
+.board-cell{
     background-color: rgb(204, 202, 202);
     border-radius: 5px;
+}
+
+#board{
+    display:flex;
+
 }

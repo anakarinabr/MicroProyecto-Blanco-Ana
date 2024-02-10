@@ -11,7 +11,6 @@
     <div class = "form">
       <header class ="order">
             <h1>Bingo</h1>
-            <button>puntajes</button>
       </header>
       <div>
         <h4>Registro</h4>
@@ -19,68 +18,25 @@
         <input placeholder="Jugador" />
         <input placeholder="Jugador" />
         <input placeholder="Jugador" />
-        <button>Empezar</button>
       </div>
-    
+      <div id="generar tableros">
+        <h4>Tamaño del tablero</h4>
+        <button id="btn-3x3" onclick="generateBoard(3)">3x3</button>
+        <button id="btn-4x4" onclick="generateBoard(4)">4x4</button>
+        <button id="btn-5x5" onclick="generateBoard(5)">5x5</button>
+      </div>
     </div>
 
-    <!-- Cuadricula del bingo -->
-    <div class = "tablero3">
-        <div class = "item"> 1</div> 
-        <div class = "item"> 2</div> 
-        <div class = "item"> 3</div> 
-        <div class = "item"> 4</div>        
-        <div class = "item"> 5</div> 
-        <div class = "item"> 6</div> 
-        <div class = "item"> 7</div> 
-        <div class = "item"> 8</div> 
-        <div class = "item"> 9</div> 
+    
+    <!--Sección de juego-->
+    <div clas="Tablas">
+    <h2>Tablero de juego</h2>
+    <div id="board"></div>
     </div>
-    <div clas ="tablero4">
-      <div class = "item"> 1</div>
-      <div class = "item"> 2</div>
-      <div class = "item"> 3</div>
-      <div class = "item"> 4</div>
-      <div class = "item"> 5</div>
-      <div class = "item"> 6</div>
-      <div class = "item"> 7</div>
-      <div class = "item"> 8</div>
-      <div class = "item"> 9</div>
-      <div class = "item"> 10</div>
-      <div class = "item"> 11</div>
-      <div class = "item"> 12</div>
-      <div class = "item"> 13</div>
-      <div class = "item"> 14</div>
-      <div class = "item"> 15</div>
-      <div class = "item"> 16</div>
-    </div>
-    <div class ="tablero5">
-      <div class = "item"> 1</div>
-      <div class = "item"> 2</div>
-      <div class = "item"> 3</div>
-      <div class = "item"> 4</div>
-      <div class = "item"> 5</div>
-      <div class = "item"> 6</div>
-      <div class = "item"> 7</div>
-      <div class = "item"> 8</div>
-      <div class = "item"> 9</div>
-      <div class = "item"> 10</div>
-      <div class = "item"> 11</div>
-      <div class = "item"> 12</div>
-      <div class = "item"> 13</div>
-      <div class = "item"> 14</div>
-      <div class = "item"> 15</div>
-      <div class = "item"> 16</div>
-      <div class = "item"> 17</div>
-      <div class = "item"> 18</div>
-      <div class = "item"> 19</div>
-      <div class = "item"> 20</div>
-      <div class = "item"> 21</div>
-      <div class = "item"> 22</div>
-      <div class = "item"> 23</div>
-      <div class = "item"> 24</div>
-      <div class = "item"> 25</div>
-    </div>
+    
+    <h2>Números llamados</h2>
+    <ul id="called-numbers"></ul>
+
   </body>
   <script src="./script.js"></script>
 </html>
