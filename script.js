@@ -4,33 +4,35 @@ function generateBoard(size) {
   const boardContainer = document.getElementById("board");
   boardContainer.innerHTML = "";
 
-  for (let i = 0; i < 4; i++) {
+  for (let j = 0; j < 4; j++) {
     let tableroarray = [];
     const tablero = document.createElement("div");
-    tablero.classList.add("table");
+
+    if (size === 3) {
+        tablero.classList.add("table3");
+      } else if (size === 4) {
+        tablero.classList.add("table4");
+      } else {
+        tablero.classList.add("table5");
+      }
 
     for (let i = 0; i < size * size; i++) {
-
       const cell = document.createElement("div");
-      if(i % 2 == 1){}
       cell.classList.add("board-cell");
       const num = getRandomNumber();
       cell.textContent = num;
       tableroarray.push(num);
       tablero.appendChild(cell);
-
     }
+
     boardContainer.appendChild(tablero);
     tableros.push(tableroarray);
-
   }
 }
 
 function getRandomNumber() {
   return Math.floor(Math.random() * 50) + 1;
 }
-
-
 
 document
   .getElementById("players-form")
