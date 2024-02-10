@@ -1,6 +1,9 @@
 let tableros = [];
 
 function generateBoard(size) {
+
+    modify();
+    
   const boardContainer = document.getElementById("board");
   boardContainer.innerHTML = "";
 
@@ -34,15 +37,10 @@ function getRandomNumber() {
   return Math.floor(Math.random() * 50) + 1;
 }
 
-document
-  .getElementById("players-form")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const player1 = document.getElementById("player1").value;
-    const player2 = document.getElementById("player2").value;
-    const player3 = document.getElementById("player3").value;
-    const player4 = document.getElementById("player4").value;
-
-    console.log("Jugadores:", player1, player2, player3, player4);
-  });
+function modify(){
+    console.log("Entra en clear");
+    const elemento = document.getElementById("form");
+    elemento.style.display = "none";
+    const elemento_new = document.getElementById("Tablas");
+    elemento_new.style.display = "flex";
+}
