@@ -7,7 +7,7 @@ function generateBoard(size) {
   const boardContainer = document.getElementById("board");
   boardContainer.innerHTML = "";
 
-  for (let j = 0; j < 4; j++) {
+  for (let j = 0; j < 4; j++) { 
     let tableroarray = [];
     const tablero = document.createElement("div");
 
