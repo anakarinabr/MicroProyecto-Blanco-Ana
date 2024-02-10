@@ -13,6 +13,7 @@
     background-color: rgb(161, 161, 243);
     margin: 50px ;
     border-radius: 10px;
+    padding: 10px;
 }
 
 .table3 {
@@ -42,6 +43,8 @@
     margin: 50px;
 }
 
+
+/*Casilla inicial*/
 .board-cell{
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
@@ -50,6 +53,7 @@
 #board{
     display:flex;
     margin: 50px;
+    
 }
 
 #Tablas{
@@ -60,5 +64,6 @@
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: rgb(161, 161, 243);
     margin: 50px ;
+    padding: 10px;
     border-radius: 10px;
 }

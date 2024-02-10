@@ -2,7 +2,9 @@ let tableros = [];
 
 function generateBoard(size) {
 
-    modify();
+    DeleteDashboard();
+
+    mostrarFlex("Tablas");
     
   const boardContainer = document.getElementById("board");
   boardContainer.innerHTML = "";
@@ -37,10 +39,34 @@ function getRandomNumber() {
   return Math.floor(Math.random() * 50) + 1;
 }
 
-function modify(){
-    console.log("Entra en clear");
+function number(){
+    const num = getRandomNumber();
+    const elemento = document.getElementById("number_aleatorio");
+    elemento.innerHTML = num;
+    cambiarCeldas(num);
+}
+
+function cambiarCeldas(aleatorio){
+    const celdas = document.querySelectorAll(".board-cell");
+    celdas.forEach((celda)  => {
+       let numero =  celda.innerHTML;
+
+       if(numero == aleatorio){
+            celda.style.backgroundColor="red";
+       }
+    
+    })
+}
+
+function DeleteDashboard(){
+
     const elemento = document.getElementById("form");
     elemento.style.display = "none";
-    const elemento_new = document.getElementById("Tablas");
+}
+
+function mostrarFlex(id){
+
+    const elemento_new = document.getElementById(id);
     elemento_new.style.display = "flex";
+
 }
