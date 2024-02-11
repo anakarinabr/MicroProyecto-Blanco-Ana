@@ -20,7 +20,9 @@
 
 /*Pantalla del tablero*/
 
-
+.backButton{
+    float: left;
+}
 .table3 {
     background-color: rgb(161, 161, 243);
     display: grid;
@@ -75,3 +77,15 @@
 }
 
 /*Pantalla de puntajes*/
+
+#puntajes{
+    display:none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(161, 161, 243);
+    margin: 50px ;
+    padding: 10px;
+    border-radius: 10px;
+}

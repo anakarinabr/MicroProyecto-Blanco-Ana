@@ -35,19 +35,30 @@
 
 <!--Sección de juego-->
 <div id="Tablas">
+  <div>
+    <button class="backButton" onclick="showDashboard()">Regresar</button>
+  </div>
   <h1>Tablero de juego</h1>
   <div>
     <button id="button-player1" onclick="ocultarTablas(jugador1)">Jugador1</button>
     <button id="button-player2" onclick="ocultarTablas(jugador2)">Jugador2</button>
     <button id="button-player3" onclick="ocultarTablas(jugador3)">Jugador3</button>
     <button id="button-player4" onclick="ocultarTablas(jugador4)">Jugador4</button>
-    <button id = "todos" onclick="resetearValores()">Mostrar todos</button>
+    <button id="todos" onclick="resetearValores()">Mostrar todos</button>
   </div>
   <div id="board"></div>
   <h2>Números llamados</h2>
   <h3 id="number_aleatorio"></h3>
   <button onclick="number()">sortear</button>
 </div>
+</div>
+
+<!--Sección de puntajes-->
+<div id="puntajes">
+  <h1>Puntajes totales:</h1>
+  <ol id="Lista">
+  </ol>
+
 </div>
 
 
