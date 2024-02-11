@@ -1,3 +1,10 @@
+/* Estil oglobal para el body */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(187, 221, 255);
+  }
+  
 
 /* Pantalla inicial (Dashboard)*/
 .order{
@@ -64,21 +71,7 @@
     margin: 50px;
 }
 
-#Tablas{
-    display:none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: rgb(161, 161, 243);
-    margin: 50px ;
-    padding: 10px;
-    border-radius: 10px;
-}
-
-/*Pantalla de puntajes*/
-
-#puntajes{
+#Tablas, #puntajes, #victorias{
     display:none;
     flex-direction: column;
     justify-content: center;

@@ -12,7 +12,7 @@
 
 <div id="form">
   <div>
-    <button>Puntajes</button>
+    <button onclick="mostrarVictorias()">Puntajes</button>
   </div>
   <header class="order">
     <h1>Bingo</h1>
@@ -55,12 +55,22 @@
 
 <!--Sección de puntajes-->
 <div id="puntajes">
-  <h1>Puntajes totales:</h1>
+  <h1>Puntajes de la partida:</h1>
   <ol id="Lista">
   </ol>
-
+  <div>
+    <button onclick="showDashboard()">Dashboard</button>
+  </div>
 </div>
 
+<!-- Sección de victorias-->
+<div id="victorias">
+  <div>
+    <button onclick="showDashboard()">Regresar</button>
+  </div>
+  <h1>Victorias de los jugadores</h1>
+  <ol id = "victoriasLista"></ol>   
+</div>
 
 </body>
 <script src="./script.js"></script>
