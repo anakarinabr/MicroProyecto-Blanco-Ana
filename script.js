@@ -417,7 +417,6 @@ function verificarPuntos() {
             }
 
         } else if (i == 1) {
-            console.log("entra en existente");
             const lleno = verificarCartonLleno(tableros[1]);
             const principal = verificarDiagonalPrincipal(tableros[1]);
             const secundaria = verificarDiagonalSecundaria(tableros[1]);

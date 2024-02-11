@@ -1,4 +1,12 @@
-/* Estil oglobal para el body */
+
+/*Estilo de los botones*/
+button{
+    background-color: #3f4547; 
+    color: white; 
+    border-radius: 10px;    
+}
+
+/* Estilo global para el body */
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
