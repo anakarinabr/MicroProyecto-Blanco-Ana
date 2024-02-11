@@ -17,9 +17,10 @@ function generateBoard(size) {
 
   const boardContainer = document.getElementById("board");
   boardContainer.innerHTML = "";
-  const contenedor = document.createElement("div");
+ 
 
   for (let j = 0; j < 4; j++) {
+    const contenedor = document.createElement("div");
     const name = document.createElement("div");
 
     if (j === 0) {
@@ -27,25 +28,32 @@ function generateBoard(size) {
       name.innerHTML = jugador1;
       name.classList.add("player-name1");
       contenedor.appendChild(name);
+      contenedor.id = "contenedor_jugador1";
     } else if (j === 1) {
       var jugador2 = document.getElementById("jugador2").value;
       name.innerHTML = jugador2;
       name.classList.add("player-name2");
       contenedor.appendChild(name);
+      contenedor.id = "contenedor_jugador2";
     } else if (j === 2) {
       var jugador3 = document.getElementById("jugador3").value;
       name.innerHTML = jugador3;
       name.classList.add("player-name3");
       contenedor.appendChild(name);
+      contenedor.id = "contenedor_jugador3";
     } else {
       var jugador4 = document.getElementById("jugador4").value;
       name.innerHTML = jugador4;
       name.classList.add("player-name4");
       contenedor.appendChild(name);
+      contenedor.id = "contenedor_jugador4";
     }
+    console.log(contenedor);
 
+   
     let tableroarray = [];
     const tablero = document.createElement("div");
+    
 
     if (size === 3) {
       tablero.classList.add("table3");
@@ -124,4 +132,66 @@ function getRandomUniqueNumbers(min, max, quantity) {
   }
 
   return randomNumbers;
+}
+
+function ocultarTablas(jugador){
+    
+    if(jugador.id == "jugador1"){
+        resetearValores();
+        const jugador_tablero = document.getElementById("contenedor_jugador2");
+        jugador_tablero.style.display="none";
+
+        const jugador_tablero3 = document.getElementById("contenedor_jugador3");
+        jugador_tablero3.style.display="none";
+
+        const jugador_tablero4 = document.getElementById("contenedor_jugador4");
+        jugador_tablero4.style.display="none";
+    }else if(jugador.id == "jugador2"){
+
+       resetearValores();
+
+        const jugador_tablero1 = document.getElementById("contenedor_jugador1");
+        jugador_tablero1.style.display="none";
+
+        const jugador_tablero3 = document.getElementById("contenedor_jugador3");
+        jugador_tablero3.style.display="none";
+
+        const jugador_tablero4 = document.getElementById("contenedor_jugador4");
+        jugador_tablero4.style.display="none";
+    }else if(jugador.id == "jugador3"){
+        resetearValores();
+        const jugador_tablero = document.getElementById("contenedor_jugador2");
+        jugador_tablero.style.display="none";
+
+        const jugador_tablero1 = document.getElementById("contenedor_jugador1");
+        jugador_tablero1.style.display="none";
+
+        const jugador_tablero4 = document.getElementById("contenedor_jugador4");
+        jugador_tablero4.style.display="none";
+    }else if(jugador.id == "jugador4"){
+        resetearValores();
+        const jugador_tablero = document.getElementById("contenedor_jugador2");
+        jugador_tablero.style.display="none";
+
+        const jugador_tablero3 = document.getElementById("contenedor_jugador3");
+        jugador_tablero3.style.display="none";
+
+        const jugador_tablero4 = document.getElementById("contenedor_jugador1");
+        jugador_tablero4.style.display="none";
+    }
+}
+
+function resetearValores(){
+    const jugador_tablero = document.getElementById("contenedor_jugador2");
+        jugador_tablero.style.display="flex";
+
+        const jugador_tablero3 = document.getElementById("contenedor_jugador3");
+        jugador_tablero3.style.display="flex";
+
+        const jugador_tablero4 = document.getElementById("contenedor_jugador4");
+        jugador_tablero4.style.display="flex";
+
+        const jugador_tablero1 = document.getElementById("contenedor_jugador1");
+        jugador_tablero1.style.display="flex";
+
 }

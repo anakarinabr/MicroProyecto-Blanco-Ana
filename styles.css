@@ -20,6 +20,7 @@
 
 /*Pantalla del tablero*/
 
+
 .table3 {
     background-color: rgb(161, 161, 243);
     display: grid;
@@ -46,6 +47,7 @@
     gap: 4px;
     margin: 50px;
 }
+
 
 
 /*Casilla inicial*/
