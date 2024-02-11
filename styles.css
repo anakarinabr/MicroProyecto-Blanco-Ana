@@ -62,7 +62,7 @@ body {
     grid-template-columns: repeat(5, 50px);
     grid-template-rows:repeat(5, 50px);
     gap: 4px;
-    margin: 50px;
+    margin: 10px;
 }
 
 
@@ -77,12 +77,12 @@ body {
     display:flex;
     flex-direction: row;
     margin: 50px;
+    flex-wrap: wrap;
 }
 
 #Tablas, #puntajes, #victorias{
     display:none;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: rgb(161, 161, 243);
