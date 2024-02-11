@@ -65,17 +65,20 @@ function generateBoard(size) {
             } else {
                 tablero.classList.add("table5");
             }
-            for (let i = 0; i < size; i++) {
-                const columnas = [];
-                for (let i = 0; i < size; i++) {
+
+            while (tableroarray.length < size)  {
+                const filas = [];
+                while (filas.length < size) {
                     const cell = document.createElement("div");
                     cell.classList.add("board-cell");
                     const num = getRandomNumber();
-                    columnas.push(num);
-                    cell.textContent = num;
-                    tablero.appendChild(cell);
+                    if (!filas.includes(num) && !tableroarray.includes(num) && !tableroarray.flat().includes(num)) {
+                        filas.push(num);
+                        cell.textContent = num;
+                        tablero.appendChild(cell);
+                    }
                 }
-                tableroarray.push(columnas);
+                tableroarray.push(filas);
             }
 
             contenedor.appendChild(tablero);
@@ -99,7 +102,7 @@ function number() {
     const tablero4 = tableros[3];
 
     if (
-        countRounds < 25 &&
+        countRounds < 50 &&
         !verificarCartonLleno(tablero1) &&
         !verificarCartonLleno(tablero2) &&
         !verificarCartonLleno(tablero3) &&
@@ -410,7 +413,7 @@ function verificarPuntos() {
             if (validarNombreEnLocalStorage(document.getElementById("jugador1").value)) {
                 let puntajeprevio = localStorage.getItem(document.getElementById("jugador1").value)
                 let valor = parseInt(puntajeprevio);
-                valor+= puntos_player1;
+                valor += puntos_player1;
                 localStorage.setItem(document.getElementById("jugador1").value, valor);
             } else {
                 localStorage.setItem(document.getElementById("jugador1").value, puntos_player1);
@@ -441,7 +444,7 @@ function verificarPuntos() {
             if (validarNombreEnLocalStorage(document.getElementById("jugador2").value)) {
                 let puntajeprevio = localStorage.getItem(document.getElementById("jugador2").value)
                 let valor = parseInt(puntajeprevio);
-                valor+= puntos_player2;
+                valor += puntos_player2;
                 localStorage.setItem(document.getElementById("jugador2").value, valor);
             } else {
                 localStorage.setItem(document.getElementById("jugador2").value, puntos_player2);
@@ -472,7 +475,7 @@ function verificarPuntos() {
             if (validarNombreEnLocalStorage(document.getElementById("jugador3").value)) {
                 let puntajeprevio = localStorage.getItem(document.getElementById("jugador3").value)
                 let valor = parseInt(puntajeprevio);
-                valor+= puntos_player3;
+                valor += puntos_player3;
                 localStorage.setItem(document.getElementById("jugador3").value, valor);
             } else {
                 localStorage.setItem(document.getElementById("jugador3").value, puntos_player3);
@@ -504,7 +507,7 @@ function verificarPuntos() {
             if (validarNombreEnLocalStorage(document.getElementById("jugador4").value)) {
                 let puntajeprevio = localStorage.getItem(document.getElementById("jugador4").value)
                 let valor = parseInt(puntajeprevio);
-                valor+= puntos_player4;
+                valor += puntos_player4;
                 localStorage.setItem(document.getElementById("jugador4").value, valor);
             } else {
                 localStorage.setItem(document.getElementById("jugador4").value, puntos_player4);
@@ -518,7 +521,7 @@ function verificarPuntos() {
 function mostrarVictorias() {
 
 
-    
+
     const element_new2 = document.getElementById("victorias");
     element_new2.style.display = "flex";
 
