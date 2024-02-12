@@ -102,7 +102,7 @@ function number() {
     const tablero4 = tableros[3];
 
     if (
-        countRounds < 50 &&
+        countRounds < 25 &&
         !verificarCartonLleno(tablero1) &&
         !verificarCartonLleno(tablero2) &&
         !verificarCartonLleno(tablero3) &&
