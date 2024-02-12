@@ -66,7 +66,7 @@ function generateBoard(size) {
                 tablero.classList.add("table5");
             }
 
-            while (tableroarray.length < size)  {
+            while (tableroarray.length < size) {
                 const filas = [];
                 while (filas.length < size) {
                     const cell = document.createElement("div");
@@ -410,15 +410,6 @@ function verificarPuntos() {
             const lista = document.getElementById("Lista");
             lista.appendChild(jugadorpuntos);
 
-            if (validarNombreEnLocalStorage(document.getElementById("jugador1").value)) {
-                let puntajeprevio = localStorage.getItem(document.getElementById("jugador1").value)
-                let valor = parseInt(puntajeprevio);
-                valor += puntos_player1;
-                localStorage.setItem(document.getElementById("jugador1").value, valor);
-            } else {
-                localStorage.setItem(document.getElementById("jugador1").value, puntos_player1);
-            }
-
         } else if (i == 1) {
             const lleno = verificarCartonLleno(tableros[1]);
             const principal = verificarDiagonalPrincipal(tableros[1]);
@@ -441,14 +432,6 @@ function verificarPuntos() {
             const lista = document.getElementById("Lista");
             lista.appendChild(jugadorpuntos);
 
-            if (validarNombreEnLocalStorage(document.getElementById("jugador2").value)) {
-                let puntajeprevio = localStorage.getItem(document.getElementById("jugador2").value)
-                let valor = parseInt(puntajeprevio);
-                valor += puntos_player2;
-                localStorage.setItem(document.getElementById("jugador2").value, valor);
-            } else {
-                localStorage.setItem(document.getElementById("jugador2").value, puntos_player2);
-            }
         } else if (i == 2) {
 
             const lleno = verificarCartonLleno(tableros[2]);
@@ -472,16 +455,6 @@ function verificarPuntos() {
             const lista = document.getElementById("Lista");
             lista.appendChild(jugadorpuntos);
 
-            if (validarNombreEnLocalStorage(document.getElementById("jugador3").value)) {
-                let puntajeprevio = localStorage.getItem(document.getElementById("jugador3").value)
-                let valor = parseInt(puntajeprevio);
-                valor += puntos_player3;
-                localStorage.setItem(document.getElementById("jugador3").value, valor);
-            } else {
-                localStorage.setItem(document.getElementById("jugador3").value, puntos_player3);
-            }
-
-
         } else if (i == 3) {
 
             const lleno = verificarCartonLleno(tableros[3]);
@@ -504,18 +477,26 @@ function verificarPuntos() {
             jugadorpuntos.innerHTML = document.getElementById("jugador4").value + ": " + puntos_player4;
             const lista = document.getElementById("Lista");
             lista.appendChild(jugadorpuntos);
-            if (validarNombreEnLocalStorage(document.getElementById("jugador4").value)) {
-                let puntajeprevio = localStorage.getItem(document.getElementById("jugador4").value)
-                let valor = parseInt(puntajeprevio);
-                valor += puntos_player4;
-                localStorage.setItem(document.getElementById("jugador4").value, valor);
-            } else {
-                localStorage.setItem(document.getElementById("jugador4").value, puntos_player4);
-            }
 
         }
     }
 
+    const valores = [puntos_player1, puntos_player2, puntos_player3, puntos_player4];
+    const max = Math.max(...valores);
+
+    var indiceGanador = valores.indexOf(max) + 1;
+
+    if (max != 0) {
+        if (validarNombreEnLocalStorage(document.getElementById(`jugador${indiceGanador}`).value)) {
+            let puntajeprevio = localStorage.getItem(document.getElementById(`jugador${indiceGanador}`).value);
+            let valor = parseInt(puntajeprevio);
+            valor++;
+            localStorage.setItem(document.getElementById(`jugador${indiceGanador}`).value, valor);
+        } else {
+
+            localStorage.setItem(document.getElementById(`jugador${indiceGanador}`).value, 1);
+        }
+    }
 }
 
 function mostrarVictorias() {
